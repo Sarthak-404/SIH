@@ -37,7 +37,7 @@ Complaint: {input}
 )
 
 # Cache the reply function to avoid recalculating responses
-@st.cache
+@st.cache_resource
 def reply(complaint):
     main = query.invoke({'input': complaint})
     response = llm.invoke(main)
